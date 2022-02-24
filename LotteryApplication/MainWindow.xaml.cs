@@ -20,25 +20,25 @@ namespace LotteryApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
-
-        public void StartRaffel()
-        {
-            Random rnd = new Random();
-
-
-        }
-
+                        
         private void BtnRaffleClick(object sender, RoutedEventArgs e)
         {
+                        
+            int num1 = int.Parse(FirstTicket.Text);
+            int num2 = int.Parse(LastTicket.Text);                          
+                                    
             TicketList.Items.Clear();
+
             Random rnd = new Random();
-            for(int i = 0; i <= 99; i++)
+            for (int i = 0; i <= 99; i++)
+
+                TicketList.Items.Add(rnd.Next(num1, num2));
             
-            TicketList.Items.Add(rnd.Next(10000));
         }
 
         private void BtnExit(object sender, RoutedEventArgs e)

@@ -21,7 +21,6 @@
         </Border.Background>
 
         <Grid>
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="35"/>
                 <RowDefinition Height="235"/>
@@ -32,10 +31,12 @@
                 <ColumnDefinition Width="350"/>
                 <ColumnDefinition/>                
             </Grid.ColumnDefinitions>
+            
             <Border Grid.Row="0"
                     Grid.ColumnSpan="2"
                     Background="Transparent"
                     MouseDown="Border_MouseDown"/>
+            
             <Button Grid.Column="1"
                     BorderThickness="0"
                     Background="Transparent"
@@ -44,8 +45,8 @@
                     Margin="0,0,15,0"
                     Height="25"
                     Width="25"
-                    Content="✖" Click="BtnExit"
-                    />
+                    Content="✖" Click="BtnExit"/>
+            
             <Button Grid.Column="1"
                     BorderThickness="0"
                     Background="Transparent"
@@ -60,6 +61,7 @@
             <StackPanel Grid.Row="1"
                         Grid.Column="0"
                         VerticalAlignment="Center">
+                
                 <TextBlock 
                        HorizontalAlignment="Center"
                        Text="Lottery"
@@ -90,11 +92,19 @@
                            FontSize="18"
                            FontWeight="Bold"
                            FontFamily="MV Boli"
-                           Foreground="#FF157315"/>
-                    <TextBox
+                           Foreground="#FF157315"
+                           />
+                    <TextBox x:Name="FirstTicket"
                         Grid.Column="1"
+                        Foreground="#FF157315"
                         FontSize="14"
-                         Style="{StaticResource ModernTextbox}"/>
+                        FontWeight="Bold"
+                        HorizontalAlignment="Left"
+                         Width="150"
+                         BorderBrush="#FF157315"
+                         BorderThickness="3"
+                         Background="Transparent"
+                         Style="{StaticResource ModernTextbox}" />
 
                     <TextBlock Grid.Row="1"
                                Margin="0,20"
@@ -103,10 +113,18 @@
                            FontWeight="Bold"
                            FontFamily="MV Boli"
                            Foreground="#FF157315"/>
-                    <TextBox Margin="0,20" Grid.Row="1"
+                    <TextBox x:Name="LastTicket"
+                        HorizontalAlignment="Left"
+                        Margin="0,20" Grid.Row="1"
                         Grid.Column="1"
+                        Foreground="#FF157315"
                         FontSize="14"
-                         Style="{StaticResource ModernTextbox}"/>
+                        FontWeight="Bold"
+                         Width="150"
+                         BorderBrush="#FF157315"
+                         BorderThickness="3"
+                         Background="Transparent"
+                         Style="{StaticResource ModernTextbox}" />
                 </Grid>
                 
                
@@ -117,22 +135,36 @@
                         Content="Start Raffle" 
                         FontSize="20" Click="BtnRaffleClick"/>
             </StackPanel>
-            <ListBox Grid.Row="1"
-                     Grid.Column="1"
-                     Grid.RowSpan="2"
-                     Margin="0,0,15,15"
+            <StackPanel Margin="0,0,15,5"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.RowSpan="2">
+                <TextBlock Text="Winning Tickets"
+                           FontFamily="MV Boli"
+                           FontSize="18"
+                           HorizontalAlignment="Center"
+                           Foreground="White"
+                           Margin="2">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <ListBox 
                      Background="Transparent"
                      x:Name="TicketList"
                      Foreground="#FF157315"
                      FontWeight="Bold"
                      FontSize="14"
                      BorderThickness="0">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Columns="4"/>
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel> 
-            </ListBox>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="4"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+
+            </StackPanel>
+            
         </Grid>
 
     </Border>
