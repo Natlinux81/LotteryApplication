@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,17 +29,24 @@ namespace LotteryApplication
                         
         private void BtnRaffleClick(object sender, RoutedEventArgs e)
         {
+            if (FirstTicket.Text != "" && LastTicket.Text != "")
+            {
+                int num1 = int.Parse(FirstTicket.Text);
+                int num2 = int.Parse(LastTicket.Text);
+
+                TicketList.Items.Clear();
+
+                Random rnd = new Random();
+                for (int i = 0; i <= 99; i++)
+
+
+                    TicketList.Items.Add(rnd.Next(num1, num2));
+            }
+            else
+            {
+                MessageBox.Show("no valid Ticketnumber!");
+            }                           
                         
-            int num1 = int.Parse(FirstTicket.Text);
-            int num2 = int.Parse(LastTicket.Text);                          
-                                    
-            TicketList.Items.Clear();
-
-            Random rnd = new Random();
-            for (int i = 0; i <= 99; i++)
-
-                TicketList.Items.Add(rnd.Next(num1, num2));
-            
         }
 
         private void BtnExit(object sender, RoutedEventArgs e)
@@ -56,5 +64,15 @@ namespace LotteryApplication
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        //private void FirstTicket_previewtextinput(object sender, TextCompositionEventArgs e)
+        //{
+        //    e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        //}
+
+        //private void LastTicket_previewtextinput(object sender, TextCompositionEventArgs e)
+        //{
+        //    //e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        //}
     }
 }

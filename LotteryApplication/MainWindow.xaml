@@ -80,7 +80,7 @@
 >
                 <Grid Margin="15">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="135"/>
+                        <ColumnDefinition Width="116"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
@@ -100,11 +100,11 @@
                         FontSize="14"
                         FontWeight="Bold"
                         HorizontalAlignment="Left"
-                         Width="150"
-                         BorderBrush="#FF157315"
-                         BorderThickness="3"
-                         Background="Transparent"
-                         Style="{StaticResource ModernTextbox}" />
+                        BorderBrush="#FF157315"
+                        BorderThickness="3"
+                        Background="Transparent"
+                        Style="{StaticResource ModernTextbox}" 
+                         />
 
                     <TextBlock Grid.Row="1"
                                Margin="0,20"
@@ -113,6 +113,7 @@
                            FontWeight="Bold"
                            FontFamily="MV Boli"
                            Foreground="#FF157315"/>
+                    
                     <TextBox x:Name="LastTicket"
                         HorizontalAlignment="Left"
                         Margin="0,20" Grid.Row="1"
@@ -120,13 +121,11 @@
                         Foreground="#FF157315"
                         FontSize="14"
                         FontWeight="Bold"
-                         Width="150"
-                         BorderBrush="#FF157315"
-                         BorderThickness="3"
-                         Background="Transparent"
-                         Style="{StaticResource ModernTextbox}" />
-                </Grid>
-                
+                        BorderBrush="#FF157315"
+                        BorderThickness="3"
+                        Background="Transparent"
+                        Style="{StaticResource ModernTextbox}" />
+                </Grid>                
                
                 <Button Style="{StaticResource ModernButton}"
                         Height="45"

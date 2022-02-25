@@ -12,7 +12,8 @@
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
                             <TextBox Margin="1"
-                                     Text="{TemplateBinding Text}"
+                                     Text="{Binding Path=Text, RelativeSource={RelativeSource TemplatedParent},
+                                             Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                      BorderThickness="0"
                                      Background="Transparent"
                                      VerticalContentAlignment="Center"
@@ -27,7 +28,7 @@
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
                                        Padding="5"
-                                       Margin="10,0,0,0"                                       
+                                       Margin="5,0,0,0"                                       
                                        Foreground="#FF73C373">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
